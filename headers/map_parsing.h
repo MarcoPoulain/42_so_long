@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:54:47 by kassassi          #+#    #+#             */
-/*   Updated: 2025/09/05 17:05:21 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/09/05 17:14:02 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	**make_map_arr(int fd, int line_count);
 int		check_map(int width, int height, char **map);
 int		check_walls(int width, int height, char **map);
 
-typedef s_glyph {
+typedef struct s_glyph 
+{
 	int	p;
 	int	e;
 	int	c;

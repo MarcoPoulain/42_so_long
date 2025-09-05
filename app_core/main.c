@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:50:22 by kassassi          #+#    #+#             */
-/*   Updated: 2025/09/05 14:20:15 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/09/05 17:15:09 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	main(void)
 	int		lines_count;
 	int		i;
 
-	fd = check_open_readonly("app_core/maps/test.ber");
+	fd = check_open_readonly("app_core/maps/invalid_number.ber");
 	lines_count = count_lines(fd);
 	close(fd);
-	fd = check_open_readonly("app_core/maps/test.ber");
+	fd = check_open_readonly("app_core/maps/invalid_number.ber");
 	map = make_map_arr(fd, lines_count);
 	close(fd);
 	if (!check_map(ft_strlen(map[0]), lines_count, map))
