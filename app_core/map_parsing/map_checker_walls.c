@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_parsing.h                                      :+:      :+:    :+:   */
+/*   map_checker_walls.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 14:54:47 by kassassi          #+#    #+#             */
-/*   Updated: 2025/09/05 17:05:21 by kassassi         ###   ########.fr       */
+/*   Created: 2025/09/05 16:58:11 by kassassi          #+#    #+#             */
+/*   Updated: 2025/09/05 17:04:19 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_PARSING_H
-# define MAP_PARSING_H
+#include "so_long.h"
 
-int		check_open_readonly(char *file);
-void	free_map(char **map);
-int		count_lines(int fd);
-char	**make_map_arr(int fd, int line_count);
-int		check_map(int width, int height, char **map);
-int		check_walls(int width, int height, char **map);
+int	check_walls(int width, int height, char **map)
+{
+	int	i;
 
-typedef s_glyph {
-	int	p;
-	int	e;
-	int	c;
-}	t_glyph;
-
-#endif
+	i = 0;
+	while (i < width)
+	{
+		if (map[0][i] != '1' || map[height - 1][i] != '1')
+			return (0);
+		i++;
+	}
+	i = 0;
+	while (i < height)
+	{
+		if (map[i][0] != '1' || map[i][width - 1] != '1')
+			return (0);
+		i++;
+	}
+	return (1);
+}

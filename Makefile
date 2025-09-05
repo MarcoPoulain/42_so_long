@@ -7,7 +7,8 @@ SRC = app_core/main.c \
 	  gnl/get_next_line_utils.c \
 	  app_core/map_parsing/map_arr.c \
 	  app_core/map_parsing/map_utils.c \
-	  app_core/map_parsing/map_checker.c
+	  app_core/map_parsing/map_checker.c \
+	  app_core/map_parsing/map_checker_walls.c
 
 OBJ = $(SRC:.c=.o)
 
