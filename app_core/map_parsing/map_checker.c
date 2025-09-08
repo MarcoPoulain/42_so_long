@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 15:22:50 by kassassi          #+#    #+#             */
-/*   Updated: 2025/09/05 17:02:54 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/09/08 14:11:32 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	is_valid_glyphset(char **map)
 	while (map[i] != NULL)
 	{
 		j = 0;
-		while (map[i][j] && map[i][j] != '\n')
+		while (map[i][j])
 		{
 			if (!ft_strchr("01CEP", map[i][j]))
 				return (0);
@@ -97,7 +97,7 @@ int	check_map(int width, int height, char **map)
 	}
 	if (!only_essentials_glyph(map))
 	{
-		write(2, "Error\nInvalid numner of P, E, or C in map\n", 41);
+		write(2, "Error\nInvalid number of P, E, or C in map\n", 42);
 		return (0);
 	}
 	if (!check_walls(width, height, map))
