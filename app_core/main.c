@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:50:22 by kassassi          #+#    #+#             */
-/*   Updated: 2025/09/06 15:37:38 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:48:11 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	player = find_player(map);
-	if (player.x > 0 && player.y > 0)
+	if (player.x >= 0 && player.y >= 0)
 		ft_printf("P se trouve en %d, %d\n", player.x, player.y);
 	free_map(map);
 	return (0);
